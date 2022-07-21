@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/Remembrancesclasses/RemembrancesOnTap.dart';
 
@@ -21,9 +20,9 @@ class Remembrances extends State<MyHome2Page>{
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
-                      r1Expanded(context,"ادكار الصباح",1),
+                      r1Expanded("اذكار الصباح",1),
                       const SizedBox(width: 10),
-                      r1Expanded(context, 'اذكار المساء',2),
+                      r1Expanded( 'اذكار المساء',2),
                     ],
                   ),
                   
@@ -34,9 +33,9 @@ class Remembrances extends State<MyHome2Page>{
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
-                      r1Expanded(context,"ادكار قبل النوم",4),
+                      r1Expanded("اذكار قبل النوم",4),
                       const SizedBox(width: 10),
-                      r1Expanded(context, 'اذكار بعد الصلاه',3),
+                      r1Expanded( 'اذكار بعد الصلاه',3),
                     ],
                   ),
                   
@@ -47,8 +46,14 @@ class Remembrances extends State<MyHome2Page>{
     );
   }
 }
-Expanded r1Expanded(BuildContext context, String type,int index) {
+class r1Expanded extends StatelessWidget {
+  String type;
+  int index;
+
+  r1Expanded(this.type,this.index );
   
+  @override
+  Widget build(BuildContext context) {
     return Expanded(
       child:  GestureDetector(
         onTap: () {
@@ -441,4 +446,6 @@ ________________________________________
       ),
     );
   }
+  
+} 
   

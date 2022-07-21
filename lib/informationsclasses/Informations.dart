@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_4/informationsclasses/informationOnTab.dart';
+import 'package:flutter_application_4/Duasclasses/DuasOnTap.dart';
+
 
 
 class MyHome4Page extends StatefulWidget {
@@ -19,42 +19,42 @@ class Informations1 extends State<MyHome4Page>{
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: i1Expanded(context,"اركان الاسلام الخمسة",1),
+                  child: i1Expanded("اركان الاسلام الخمسة",1),
                   
                 ),
               ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: i1Expanded(context,"اركان الايمان الستة",2),
+                  child: i1Expanded("اركان الايمان الستة",2),
                   
                 ),
               ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: i1Expanded(context,"فرائض الصلاة",3),
+                  child: i1Expanded("فرائض الصلاة",3),
                   
                 ),
               ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: i1Expanded(context,"سنن الصلاة",4),
+                  child: i1Expanded("سنن الصلاة",4),
                   
                 ),
               ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: i1Expanded(context,"اركان الصلاة",5),
+                  child: i1Expanded("اركان الصلاة",5),
                   
                 ),
               ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: i1Expanded(context,"مناسك الحج",6),
+                  child: i1Expanded("مناسك الحج",6),
                   
                 ),
               ),
@@ -63,9 +63,13 @@ class Informations1 extends State<MyHome4Page>{
     );
   }
 }
-Expanded i1Expanded(BuildContext context, String type,int index) {
-    return Expanded(
-        child: Container(
+class i1Expanded extends StatelessWidget {
+  String type;
+  int index;
+  i1Expanded(this.type,this.index);
+  @override
+  Widget build(BuildContext context) {
+    return  Container(
           width: double.infinity,
               decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
@@ -79,7 +83,7 @@ Expanded i1Expanded(BuildContext context, String type,int index) {
                      Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => InformationsOoTap("""
+             builder: (context) => DuasAndInformationOnTap("""
 قال النبي صلى الله عليه وسلم: 
 "بني الإسلام على خمس: 
 شهادة أن لا إله إلا الله, وأن محمدا رسول الله, 
@@ -93,7 +97,7 @@ Expanded i1Expanded(BuildContext context, String type,int index) {
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => InformationsOoTap("""
+             builder: (context) => DuasAndInformationOnTap("""
 	لإيمان بالله
 	 الإيمان بالملائكة
 	الإيمان بالكتب السماوية
@@ -106,7 +110,7 @@ Expanded i1Expanded(BuildContext context, String type,int index) {
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => InformationsOoTap("""
+             builder: (context) => DuasAndInformationOnTap("""
 النيّة.
 
 
@@ -147,7 +151,7 @@ Expanded i1Expanded(BuildContext context, String type,int index) {
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => InformationsOoTap("""
+             builder: (context) => DuasAndInformationOnTap("""
 رفع اليدين عند تكبيرة الإحرام،
 
 
@@ -168,7 +172,7 @@ Expanded i1Expanded(BuildContext context, String type,int index) {
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => InformationsOoTap("""
+             builder: (context) => DuasAndInformationOnTap("""
 وأما أركان الصلاة فهي:
  النية.
  تكبيرة الإحرام.
@@ -189,7 +193,7 @@ Expanded i1Expanded(BuildContext context, String type,int index) {
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => InformationsOoTap("""
+             builder: (context) => DuasAndInformationOnTap("""
 الاحرام
 االطواف
 السعي
@@ -208,46 +212,8 @@ Expanded i1Expanded(BuildContext context, String type,int index) {
                   
                 ),
               ),
-            ),
-          
-        
-      );
-    
-      
-    
+            );
   }
-  Expanded i2Expanded(BuildContext context, String type) {
-    return Expanded(
-      child:  GestureDetector(
-        onTap: () {
-          
-        },
-        child: Container(
-           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.blueGrey,
-                 
-                
-          ),
-              
-              width: double.infinity,
-              
-              child: TextButton(
-                onPressed: () {
-                  
-                  //print(result);
-                  
-                },
-                child: Text(
-                  type,style:  Theme.of(context).textTheme.headline1,
-                  
-                ),
-              ),
-            ),
-          
-        ),
-      );
-    
-      
-    
-  }
+}
+
+ 

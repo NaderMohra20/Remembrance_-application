@@ -1,10 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 
-class DuasOnTap extends StatelessWidget {
+class DuasAndInformationOnTap extends StatelessWidget {
   String text1 ;
   String text2;
-  DuasOnTap (this.text1,this.text2);
+  DuasAndInformationOnTap (this.text1,this.text2);
+  sharetext() {
+     Share.share(text1 );
+ }
   @override
   Widget build(BuildContext context) {
     
@@ -14,13 +17,18 @@ class DuasOnTap extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: 
         Center(
-          child: Container(
-            
-            color: Colors.teal,
-            child: Center(child: Text(text1,style:  Theme.of(context).textTheme.headline2,textAlign: TextAlign.center,),
+          child: GestureDetector(
+            onTap: () {
+              sharetext();
+            },
+            child: Container(
               
-            ),
-           ),
+              color: Colors.teal,
+              child: Center(child: Text(text1,style:  Theme.of(context).textTheme.headline2,textAlign: TextAlign.center,),
+                
+              ),
+             ),
+          ),
         ),
 
       

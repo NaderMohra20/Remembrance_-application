@@ -1,10 +1,13 @@
-
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 
 class RemembrancesOnTap extends StatelessWidget {
   String text ;
   String text2;
   RemembrancesOnTap(this.text,this.text2);
+  sharetext() {
+     Share.share(text );
+ }
   @override
   Widget build(BuildContext context) {
     
@@ -13,18 +16,28 @@ class RemembrancesOnTap extends StatelessWidget {
     body: Padding(
       padding: const EdgeInsets.all(8.0),
       child: ListView(children: [
-        Container(
-          
-          color: Colors.teal,
-          child: Center(child: Text(text,style:  Theme.of(context).textTheme.headline2,textAlign: TextAlign.center,),
-            
-          ),
-         ),
+        
+            GestureDetector(
+              onTap: () {
+                sharetext();
+              },
+             child: Container(
+              
+              color: Colors.teal,
+              child: Center(child: Text(text,style:  Theme.of(context).textTheme.headline2,textAlign: TextAlign.center,),
+                
+              ),
+             ),
+           ),
+        
 
       ],
          
       ),
-    ),);
+      
+    ),
+    
+    );
   }
   
 }

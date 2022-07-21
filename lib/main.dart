@@ -13,14 +13,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Remembrance App',
       theme: ThemeData(
         primarySwatch: Colors.teal,
         canvasColor: Colors.black,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
         iconTheme: const IconThemeData(color: Colors.black),
         textTheme: const TextTheme(
           headline1: TextStyle(
-            fontSize: 24,
+            fontSize: 16,
             fontWeight: FontWeight.w800,
             color: Colors.white,
           ),
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
 
         ),
       ),
-      home:const MyHomePage(),
+      home: const MyHomePage(),
       );
       
     

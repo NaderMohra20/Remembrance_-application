@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/Duasclasses/DuasOnTap.dart';
+
 
 
 
@@ -22,9 +22,9 @@ class Duas extends State<MyHome1Page>{
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
-                      d1Expanded(context,"دعاء دخول المسجد",1),
+                      d1Expanded("دعاء دخول المسجد",1),
                       const SizedBox(width: 10),
-                      d1Expanded(context, 'دعاء الخروج من المسجد',2),
+                      d1Expanded( 'دعاء الخروج من المسجد',2),
                     ],
                   ),
                   
@@ -35,9 +35,9 @@ class Duas extends State<MyHome1Page>{
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
-                      d1Expanded(context,"دعاء دخول الخلاء",4),
+                      d1Expanded("دعاء دخول الخلاء",4),
                       const SizedBox(width: 10),
-                      d1Expanded(context, 'دعاء الخروج من الخلاء',3),
+                      d1Expanded( 'دعاء الخروج من الخلاء',3),
                     ],
                   ),
                   
@@ -48,9 +48,9 @@ class Duas extends State<MyHome1Page>{
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
-                      d1Expanded(context,"دعاء دخول البيت",5),
+                      d1Expanded("دعاء دخول البيت",5),
                       const SizedBox(width: 10),
-                      d1Expanded(context, 'دعاء الخروج من البيت',6),
+                      d1Expanded( 'دعاء الخروج من البيت',6),
                     ],
                   ),
                   
@@ -61,9 +61,9 @@ class Duas extends State<MyHome1Page>{
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
-                      d1Expanded(context,"دعاء دخول السوق",8),
+                      d1Expanded("دعاء دخول السوق",8),
                       const SizedBox(width: 10),
-                      d1Expanded(context, 'دعاء الوضوء',7),
+                      d1Expanded( 'دعاء الوضوء',7),
                     ],
                   ),
                   
@@ -74,9 +74,9 @@ class Duas extends State<MyHome1Page>{
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
-                      d1Expanded(context,"دعاء السفر",9),
+                      d1Expanded("دعاء السفر",9),
                       const SizedBox(width: 10),
-                      d1Expanded(context, 'دعاء يوم عرفة',10),
+                      d1Expanded( 'دعاء يوم عرفة',10),
                     ],
                   ),
                   
@@ -87,9 +87,9 @@ class Duas extends State<MyHome1Page>{
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
                     children: [
-                      d1Expanded(context,"دعاء الاستخارة",12),
+                      d1Expanded("دعاء الاستخارة",12),
                       const SizedBox(width: 10),
-                      d1Expanded(context, 'دعاء الاستفتاح',11),
+                      d1Expanded( 'دعاء الاستفتاح',11),
                     ],
                   ),
                   
@@ -100,7 +100,12 @@ class Duas extends State<MyHome1Page>{
     );
   }
 }
-Expanded d1Expanded(BuildContext context, String type,int index) {
+class d1Expanded extends StatelessWidget{
+  String type;
+  int index;
+  d1Expanded(this.type,this.index);
+  @override
+  Widget build(BuildContext context) {
     return Expanded(
         child: Container(
           decoration: BoxDecoration(
@@ -115,7 +120,7 @@ Expanded d1Expanded(BuildContext context, String type,int index) {
              Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => DuasOnTap("""
+             builder: (context) => DuasAndInformationOnTap ("""
 ما رُوي عن أبو حميد الساعدي -رضي الله عنه- حيث قال: "إذا دخلَ أحدُكُمُ المسجِدَ، فليسلِّم علَى النَّبيِّ -صلَّى اللَّهُ عليهِ وسلَّمَ-، ثمَّ ليقُلْ: اللَّهمَّ افتَح لي أبوابَ رحمتِكَ".
 
 1	
@@ -132,7 +137,7 @@ ________________________________________
              Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) =>DuasOnTap ("""
+             builder: (context) =>DuasAndInformationOnTap  ("""
 جاء في الحديث النبويّ الشريف: (إذا دخل أحدُكم المسجدَ فليسلمْ على النبيِّ -صلَّى اللهُ عليهِ وسلَّمَ- وليقلْ: اللهمَّ افتحْ لي أبوابَ رحمتِك، وإذا خرج فليسلمْ على النبيِّ -صلَّى اللهُ عليهِ وسلَّمَ- وليقل: اللهمَّ اعصمني من الشَّيطانِ الرجيمِ)،[٤] ويُسنّ أن يكون خروج المُصلّي من المسجد بقدمه اليسرى
 
 ""","دعاء الخروج من المسجد") ));
@@ -141,7 +146,7 @@ ________________________________________
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => DuasOnTap ("""
+             builder: (context) => DuasAndInformationOnTap  ("""
 إن الدعاء بعد الخروج من الخلاء فقد ثبت عن عائشة أم المؤمنين، أن النبي -صلى الله عليه وسلم- كان إذا خرج من الغائط قال: (غفرانك)،[٧] ومعنى عبارة غفرانك: نطلب منك يا ربنا العفو والمغفرة؛ لنقصنا وتقصيرنا في حقك
 """,'دعاء الخروج من الخلاء') ));
                    
@@ -149,7 +154,7 @@ ________________________________________
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => DuasOnTap ("""
+             builder: (context) => DuasAndInformationOnTap  ("""
 يسنّ للمسلم إذا أراد أن يدخل إلى الخلاء لقضاء حاجته أن يردد دعاء النبي -صلى الله عليه وسلم-: (اللهم إني أعوذ بك من الخبث والخبائث)،[٢] ومعنى الاستعاذة: الاعتصام بالله والالتجاء إليه -سبحانه وتعالى- من وسوسة الشيطان ونزغه.
 ""","دعاء دخول الخلاء") ));
                    
@@ -157,7 +162,7 @@ ________________________________________
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => DuasOnTap ("""
+             builder: (context) => DuasAndInformationOnTap  ("""
 
 إلقاء تحية الإسلام: بدليل قول الله -تعالى-: (فَإِذَا دَخَلْتُم بُيُوتاً فَسَلِّمُوا عَلَى أَنفُسِكُمْ تَحِيَّةً مِّنْ
 عِندِ اللَّهِ مُبَارَكَةً طَيِّبَةً كَذَلِكَ يُبَيِّنُ اللَّهُ لَكُمُ الْآيَاتِ لَعَلَّكُمْ تَعْقِلُون).
@@ -180,7 +185,7 @@ ________________________________________
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => DuasOnTap ("""
+             builder: (context) => DuasAndInformationOnTap  ("""
 عن أمِّ المؤمنين أمُّ سلمة -رضي الله عنها- تصف خروجه -صلى الله عليه وسلم- من بيتها فتقول: (ما خرَجَ النَّبيُّ صلَّى اللهُ عليه وسلَّمَ من بَيتي قَطُّ إلَّا رفَعَ طَرْفَه إلى السَّماءِ، فقال: اللَّهُمَّ إنِّي أعوذُ بكَ أنْ أضِلَّ أو أُضَلَّ، أو أزِلَّ أو أُزَلَّ، أو أظْلِمَ أو أُظلَمَ، أو أجهَلَ أو يُجهَلَ عليَّ)
 """,'دعاء الخروج من البيت') ));
                    
@@ -188,7 +193,7 @@ ________________________________________
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) =>  DuasOnTap ("""يُستحب للمسلم بعد الانتهاء من الوضوء أن ينطق الشهادتين، فيقول: (أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ وَأَشْهَدُ أَنَّ مُحَمَّداً عَبْدُهُ وَرَسُولُهُ)
+             builder: (context) =>  DuasAndInformationOnTap  ("""يُستحب للمسلم بعد الانتهاء من الوضوء أن ينطق الشهادتين، فيقول: (أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ وَأَشْهَدُ أَنَّ مُحَمَّداً عَبْدُهُ وَرَسُولُهُ)
              ، ثم يقول: "اللهم اجعلني من التوابين واجعلني من المتطهرين"، فقد ورد في حديث عن الرسول -صلى الله عليه وسلم- قال: (من توضأ، فأحسن الوضوء ثم قال: أشهد أن لا إله إلا الله وحده لا شريك له، وأشهد أن محمدا عبده ورسوله، اللهم اجعلني من التوابين واجعلني من المتطهرين فتحت له ثمانية أبواب الجنة يدخل من أيها شاء)
 
 """,'دعاء الوضوء') ));
@@ -197,7 +202,7 @@ ________________________________________
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => DuasOnTap ("""
+             builder: (context) => DuasAndInformationOnTap  ("""
 جاء في الحديث الذي رواه الإمام التِّرمذي وغيره، من حديث عمر بن الخطاب -رضي الله عنهما-، أن رسول الله -صلى الله عليه وسلم- قال: (من دخل السوقَ فقال: لا إلهَ إلَّا اللهُ وحدَه لا شريكَ له، له الملكُ وله الحمدُ يُحيي ويميتُ وهو حيٌّ لا يموتُ بيدِه الخيرُ وهو على كلِّ شيءٍ قديرٍ كتب اللهُ له ألفَ ألفِ حسنةٍ ومحا عنه ألفَ ألفِ سيئةٍ ورفع له ألفَ ألفِ درجةٍ)،
 ""","دعاء دخول السوق") ));
                    
@@ -205,7 +210,7 @@ ________________________________________
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => DuasOnTap ("""
+             builder: (context) => DuasAndInformationOnTap  ("""
 
 الله أكبر ، الله أكبر، سبحان الذي سخرلنا هذا وما كنا له مقرنين وإنا إلى ربنا لمنقلبون، اللهم إنا نسألك في سفرنا هذا البر والتقوى، ومن العمل ما ترضى، اللهم هون علينا سفرنا هذا وطوي عنا بعده، اللهم أنت الصاحب في السفر، والخليفة في الأهل، اللهم اني أعوذبك من وعثاء السفر، وكابة المنظر وسوء المنقلب في المال والاهل، وإذا رجع قالهن وزاد فيهن: ايبون، تائبون، عابدون، لربنا حامدون.
 
@@ -214,7 +219,7 @@ ________________________________________
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => DuasOnTap ("""
+             builder: (context) => DuasAndInformationOnTap  ("""
 ثبت عن النبي -صلى الله عليه وسلم- أنَّ أفضل الدعاءِ دعاءُ يوم عرفة، قال: (خيرُ الدُّعاءِ دعاءُ يومِ عرفةَ، وخيرُ ما قلتُ أَنا والنَّبيُّونَ من قبلي: لا إلَهَ إلَّا اللَّهُ وحدَهُ لا شريكَ لَهُ، لَهُ الملكُ ولَهُ الحمدُ وَهوَ على كلِّ شَيءٍ قديرٌ)
 """,'دعاء يوم عرفة') ));
                    
@@ -222,7 +227,7 @@ ________________________________________
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => DuasOnTap ("""
+             builder: (context) => DuasAndInformationOnTap  ("""
 
 (وجَّهتُ وجهي للذي فطر السماواتِ والأرضِ حنيفًا وما أنا من المشركين. إنَّ صلاتي ونسُكي ومحيايَ ومماتي لله ربِّ العالمين لا شريك له وبذلك أُمِرتُ وأنا من المسلمِين)
 
@@ -242,7 +247,7 @@ ________________________________________
                     Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) =>DuasOnTap ("""
+             builder: (context) =>DuasAndInformationOnTap  ("""
 اللَّهُمَّ إنِّي أَسْتَخِيرُكَ بِعِلْمِكَ, وَأَسْتَقْدِرُكَ بِقُدْرَتِكَ, وَأَسْأَلُكَ مِنْ فَضْلِكَ الْعَظِيمِ فَإِنَّكَ تَقْدِرُ وَلا أَقْدِرُ, وَتَعْلَمُ وَلا أَعْلَمُ, وَأَنْتَ عَلامُ الْغُيُوبِ, اللَّهُمَّ إنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الأَمْرَ ( وهنا تقوم بذكر حاجتك ) خَيْرٌ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي أَوْ قَالَ : عَاجِلِ أَمْرِي وَآجِلِهِ 
 , فَاقْدُرْهُ لِي وَيَسِّرْهُ لِي ثُمَّ بَارِكْ لِي فِيهِ , اللَّهُمَّ وَإِنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الأَمْرَ (وهنا أيضا تقوم بذكر حاجتك ) شَرٌّ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي أَوْ قَالَ : عَاجِلِ أَمْرِي وَآجِلِهِ
  , فَاصْرِفْهُ عَنِّي وَاصْرِفْنِي عَنْهُ وَاقْدُرْ لِي الْخَيْرَ حَيْثُ كَانَ ثُمَّ ارْضِنِي بِهِ . وهنا كذلك تقوم بذكر حاجتك )
@@ -262,8 +267,8 @@ ________________________________________
           
         
       );
-    
-      
-    
   }
+
+}
+
  

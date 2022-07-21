@@ -5,6 +5,7 @@ import 'package:flutter_application_4/Remembrancesclasses/Remembrances.dart';
 import 'package:flutter_application_4/Duasclasses/Duas.dart';
 import 'package:flutter_application_4/Remembrancesclasses/RemembrancesOnTap.dart';
 import 'package:flutter_application_4/informationsclasses/Informations.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -13,6 +14,9 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => MyHomePageState();
 }
 class MyHomePageState extends State<MyHomePage> {
+  sendMessageByWhatsapp(String phone, String message) {
+     String url = "whatsapp://send?phone=$phone&text=${Uri.encodeFull(message)}";
+      launchUrl(Uri.parse(url)); }
 
   
 
@@ -40,7 +44,7 @@ class MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => DuasOnTap("""
+             builder: (context) => DuasAndInformationOnTap("""
 مالدعاء طاعة لله، وامتثال لأمره
 قال تعالى: "وقال ربكم ادعوني أستجب لكم إن الذين يستكبرون عن عبادتي سيدخلون جهنم داخرين". [سورة غافر: الآية 60]
 الدعاء عبادة
@@ -71,7 +75,7 @@ class MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
             context,
              MaterialPageRoute(
-             builder: (context) => DuasOnTap("""
+             builder: (context) => DuasAndInformationOnTap("""
 حصول المسلم على الأجر والثواب في الدنيا والأخرة، فكل تسبيحة ذكر يذكر المسلم بها الله تعالى يؤجر عليها كأجر تصدقه بشيءٍ. دخول الجنة من غير حساب لمَن قرأ هذه الأذكار في الصباح والمساء، ومات في نفس اليوم
  عتق الذاكر من عذاب النار والقبر
  زرع الطمأنينة في قلب المسلم، لكسبه رضا الله تعالى وقربه، فيصبح قلبه راضياً بكل قضاء من الله؛ لأنه يعلم بأنَّ كل ما يأتي من الله خير
@@ -867,10 +871,22 @@ class MyHomePageState extends State<MyHomePage> {
 
 36- ((اللهم اجعل صلاتك ورحمتك وبركاتك على سيد المرسلين، وإمام المتقين، وخاتم النبيين، محمد عبدك ورسولك إمام الخير، وقائد البر، ورسول الرحمة، اللهم ابعثه مقامًا محمودًا يغبطه به الأولون والآخرون))؛ أخرجه ابن ماجه في سننه، والطبراني في العجم الكبير.
 
-""",'الرقية الشرعية') ));
+""",'الرقية الشرعية') ),
+
+);
                
               },
             ),
+            ListTile(
+              
+              trailing: const Icon(Icons.arrow_forward_ios,color:Colors.white),
+             
+              title:  Text("تواصل معنا ",style: Theme.of(context).textTheme.headline2),
+              onTap: () {
+                sendMessageByWhatsapp("972592925383","");
+              }
+           )
+              
           ],
         ),
       ),
